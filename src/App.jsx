@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-      <div>
+      <div className="root">
         <SignedOut>
           <SignInButton />
               <h3>This content is PUBLIC. Only signed out users can see this.</h3>
