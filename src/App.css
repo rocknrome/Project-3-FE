@@ -1,7 +1,7 @@
 #root {
   width: 100%;
   text-align: center;
-  margin: 5px;
+  margin: 0;
 }
 
 .logo {
@@ -40,19 +40,39 @@
   color: #888;
 }
 
-.footer {
-  background-color: aquamarine;
+.footer, .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   color: rgb(47, 81, 82);
-  margin: 5px;
-  text-align: center;
+  padding: 20px;
+}
+
+.footer {
+  background-color: aquamarine;
 }
 
 .header {
-  background-color: aqua;
-  color: rgb(47, 81, 82);
-  width: 100%;
-  margin: 5px;
-  text-align: center;
+  background-color: rgb(63, 133, 133);
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 1rem;
 }
 
+
+.logo img {
+
+}
+
+.navigation-links {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #494848;
+}
+
+.navigation-links a:hover {
+  color: white;
+}

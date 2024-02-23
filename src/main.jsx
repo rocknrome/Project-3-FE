@@ -1,26 +1,41 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
-import { ClerkProvider } from '@clerk/clerk-react'
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
-import Footer from './components/footer.jsx'
-import Header from './components/header.jsx'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-// Importing our publishable key for Clerk
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+// Import the layouts
+import RootLayout from './layouts/root-layout'
+import DashboardLayout from './layouts/dashboard-layout'
 
-//Running check for the key
-if (!PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key")
-}
+// Import the components
+import IndexPage from './routes'
+import SignInPage from './routes/sign-in'
+import SignUpPage from './routes/sign-up'
+import DashboardPage from './routes/dashboard'
 
+
+const router = createBrowserRouter([
+  {
+    element: <RootLayout />,
+    children: [
+      { path: "/", element: <IndexPage /> },
+      { path: "/sign-in", element: <SignInPage /> },
+      { path: "/sign-up", element: <SignUpPage /> },
+      {
+        element: <DashboardLayout />,
+        path: "dashboard",
+        children: [
+          { path: "/dashboard", element: <DashboardPage /> },
+
+        ]
+      }
+    ]
+  }
+])
+ 
 ReactDOM.createRoot(document.getElementById('root')).render(
+
   <React.StrictMode>
-      <ClerkProvider publishableKey={PUBLISHABLE_KEY}> {/*wrapping app in ClerkProvider*/}
-        <Header />
-          <App />
-        <Footer />
-      </ClerkProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>,
-)
+);
