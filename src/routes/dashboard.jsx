@@ -20,19 +20,20 @@ export default function DashboardPage() {
       <div className="dashboard">
         <h1>Dashboard page</h1>
       </div>
-      {/*<div className="cards-container"> //original code with multiple cards and flippable logic
+      <div className="cards-container"> //original code with multiple cards and flippable logic
         <h2>This is a protected page</h2>
         {/* Render our flippable cards here */}
-        {/*{cardData.map((card, index) => (
+        {cardData.map((card, index) => (
           <FlipCard key={index} question={card.question} answer={card.answer} />
         ))}
-      </div>*/}
-    <div className="cards-container">  {/*sample with one card and question/answer*/}
+      </div>
+      
+    <div className="cards-container">
         <h2>This is the protected page</h2>
         {/* Render our cards here */}
         <FlipCard question="What is React?" answer="A JavaScript library for building user interfaces." />
         {/* You can add more FlipCard components here as needed */}
-      </div>
+      </div>*
 
     </>
   );
