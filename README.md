@@ -1,8 +1,25 @@
-# React + Vite
+# Study Buddy (working name) - Project 3 MERN-Stack App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Study Buddy is a web application that allows users to create decks of flashcards to help them study anything from software development to foreign languages to trivia.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## React Routes
+
+1. "/" - App
+2. "" - Landing/Index of Flashcard Decks
+3. ":id" - Show Deck
+4. "/createDeck"
+5. "/updateDeck/:id"
+6. "/deleteDeck/:id"
+7. "/:Deck/createCard"
+8. "/:DeckId/updateCard/:id"
+9. "/:DeckId/deleteCard/:id"
+
+## React Architecture
+
+![React Architecture](https://i.imgur.com/3Uo8QlO.jpeg)
+
+## Wireframes
+
+![Study Buddy Wireframes](https://i.imgur.com/5YUMwKG.jpeg)
